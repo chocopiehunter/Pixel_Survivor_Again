@@ -36,35 +36,36 @@ namespace Assets.PixelFantasy.PixelHeroes.Common.Scripts.ExampleScripts
             var state = _animation.GetState();
 
             if (state == CharacterState.Die || state == CharacterState.Block || state == CharacterState.Climb) return;
-            
+
             var velocity = _rigidbody.linearVelocity;
+            var maxSpeed = MaxSpeed;
+            float accel = Acceleration;
+            float decel = Acceleration * 4f;
+
+            if (!IsGrounded)
+            {
+                accel *= 0.8f;
+                decel *= 0.5f;
+            }
+            else if (_crouch)
+            {
+                accel /= 2;
+                maxSpeed /= 4;
+            }
 
             if (Input.x == 0)
             {
-                if (IsGrounded)
-                {
-                    velocity.x = Mathf.MoveTowards(velocity.x, 0, Acceleration * 3 * Time.fixedDeltaTime);
-                }
+                velocity.x = Mathf.MoveTowards(velocity.x, 0, decel * Time.fixedDeltaTime);
             }
             else
             {
-                var maxSpeed = MaxSpeed;
-                var acceleration = Acceleration;
+                bool isTurning = (Input.x > 0 && velocity.x < 0) || (Input.x < 0 && velocity.x > 0);
+                float currentStrength = isTurning ? (accel + decel) : accel;
 
-                if (_jump)
-                {
-                    acceleration /= 2;
-                }
-                else if (_crouch)
-                {
-                    acceleration /= 2;
-                    maxSpeed /= 4;
-                }
-
-                velocity.x = Mathf.MoveTowards(velocity.x, Input.x * maxSpeed, acceleration * Time.fixedDeltaTime);
+                velocity.x = Mathf.MoveTowards(velocity.x, Input.x * maxSpeed, currentStrength * Time.fixedDeltaTime);
                 Turn(velocity.x);
             }
-            
+
             if (IsGrounded)
             {
                 _crouch = Input.y < 0;
@@ -73,28 +74,13 @@ namespace Assets.PixelFantasy.PixelHeroes.Common.Scripts.ExampleScripts
                 {
                     if (Input.x == 0)
                     {
-                        if (_crouch)
-                        {
-                            _animation.Crouch();
-                        }
-                        else
-                        {
-                            if (state != CharacterState.Idle)
-                            {
-                                _animation.Ready();
-                            }
-                        }
+                        if (_crouch) _animation.Crouch();
+                        else if (state != CharacterState.Idle) _animation.Ready();
                     }
                     else
                     {
-                        if (_crouch)
-                        {
-                            _animation.Crawl();
-                        }
-                        else
-                        {
-                            _animation.Run();
-                        }
+                        if (_crouch) _animation.Crawl();
+                        else _animation.Run();
                     }
                 }
 

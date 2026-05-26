@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: UnityBasic_DaniTech
+  productName: Pixel_Survivor_Again
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -828,7 +828,22 @@ PlayerSettings:
   webWasm2023: 0
   webEnableSubmoduleStrippingCompatibility: 0
   scriptingDefineSymbols:
-    Standalone: MOREMOUNTAINS_NICEVIBRATIONS_INSTALLED
+    Android: ES3_TMPRO;ES3_UGUI
+    EmbeddedLinux: ES3_TMPRO;ES3_UGUI
+    LinuxHeadlessSimulation: ES3_TMPRO;ES3_UGUI
+    Nintendo Switch: ES3_TMPRO;ES3_UGUI
+    Nintendo Switch 2: ES3_TMPRO;ES3_UGUI
+    PS4: ES3_TMPRO;ES3_UGUI
+    PS5: ES3_TMPRO;ES3_UGUI
+    QNX: ES3_TMPRO;ES3_UGUI
+    Server: ES3_TMPRO;ES3_UGUI
+    Standalone: MOREMOUNTAINS_NICEVIBRATIONS_INSTALLED;ES3_TMPRO;ES3_UGUI
+    VisionOS: ES3_TMPRO;ES3_UGUI
+    WebGL: ES3_TMPRO;ES3_UGUI
+    Windows Store Apps: ES3_TMPRO;ES3_UGUI
+    XboxOne: ES3_TMPRO;ES3_UGUI
+    iPhone: ES3_TMPRO;ES3_UGUI
+    tvOS: ES3_TMPRO;ES3_UGUI
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
