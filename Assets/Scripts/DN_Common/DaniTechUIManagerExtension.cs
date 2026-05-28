@@ -39,7 +39,7 @@ public static class DaniTechUIManagerExtension
     public static void ShowStartupUIOnGameStart(this DaniTechUIManager uiManager)
     {
         uiManager.OpenLoadingUI();
-        uiManager.OpenContentUI(DaniTechUIType.DNRobbyUI);
+        // uiManager.OpenContentUI(DaniTechUIType.DNRobbyUI);
         // 내꺼
         uiManager.OpenContentUI(DaniTechUIType.RobbyUI);
         // uiManager.OpenUI(DaniTechUIRootType.ContentUI, DaniTechUIType.DNRobbyUI); // 위랑 똑같은 원리

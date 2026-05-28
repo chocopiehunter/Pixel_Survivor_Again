@@ -12,6 +12,9 @@ public class DaniTech_LoadingUI : DaniTechUIBase
     [SerializeField] private Image Image_SliderColor;
     [SerializeField] private UnityEngine.Color[] ColorArray_LoadingBar;
 
+    // 로딩바 색상 고정
+    [SerializeField] private Color fixedLoadingColor = Color.white;
+
     private CancellationTokenSource _cancelToken;
     float[] _pausePoints = { 0.1f, 0.1f, 0.1f };
     int _pauseIndex = 0;
@@ -24,7 +27,8 @@ public class DaniTech_LoadingUI : DaniTechUIBase
 
     private void LoadAndSetLoadingImg()
     {
-        int randomIdx = UnityEngine.Random.Range(0, 2);
+        // int randomIdx = UnityEngine.Random.Range(0, 2);
+        int randomIdx = 2;
 
         string texturePath = string.Empty;
         switch (randomIdx)
@@ -34,6 +38,9 @@ public class DaniTech_LoadingUI : DaniTechUIBase
                 break;
             case 1:
                 texturePath = "Texture2D/Texture2D_Loading_2";
+                break;
+            case 2:
+                texturePath = "Texture2D/Texture2D_Loading_3";
                 break;
         }
 
@@ -80,21 +87,25 @@ public class DaniTech_LoadingUI : DaniTechUIBase
 
     private void ChangeColorByLoadingBarValue(float curValue)
     {
-        if (curValue > 0.8)
-        {
-            Image_SliderColor.color = ColorArray_LoadingBar.Length >= 4 ? ColorArray_LoadingBar[3] : Color.white;
-        }
-        else if(curValue > 0.6)
-        {
-            Image_SliderColor.color = ColorArray_LoadingBar.Length >= 3 ? ColorArray_LoadingBar[2] : Color.white;
-        }
-        else if (curValue > 0.4)
-        {
-            Image_SliderColor.color = ColorArray_LoadingBar.Length >= 2 ? ColorArray_LoadingBar[1] : Color.white;
-        }
-        else
-        {
-            Image_SliderColor.color = ColorArray_LoadingBar.Length >= 1 ? ColorArray_LoadingBar[0] : Color.white;
-        }
-    }
+        // 로딩바 색상 고정
+        Image_SliderColor.color = fixedLoadingColor;
+
+
+    //if (curValue > 0.8)
+    //{
+    //    Image_SliderColor.color = ColorArray_LoadingBar.Length >= 4 ? ColorArray_LoadingBar[3] : Color.white;
+    //}
+    //else if(curValue > 0.6)
+    //{
+    //    Image_SliderColor.color = ColorArray_LoadingBar.Length >= 3 ? ColorArray_LoadingBar[2] : Color.white;
+    //}
+    //else if (curValue > 0.4)
+    //{
+    //    Image_SliderColor.color = ColorArray_LoadingBar.Length >= 2 ? ColorArray_LoadingBar[1] : Color.white;
+    //}
+    //else
+    //{
+    //    Image_SliderColor.color = ColorArray_LoadingBar.Length >= 1 ? ColorArray_LoadingBar[0] : Color.white;
+    //}
+}
 }
