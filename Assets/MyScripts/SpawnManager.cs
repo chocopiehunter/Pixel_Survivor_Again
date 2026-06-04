@@ -35,7 +35,7 @@ public class SpawnManager : MonoBehaviour
         Transform selectedPoint = spawnPoints[randomIndex];
 
         // PoolManager한테 대기중인 몹 요청
-        GameObject enemy = PoolManager.Instance.GetEnemy();
+        GameObject enemy = PoolManager.Inst.GetEnemy();
 
         if (enemy != null)
         {

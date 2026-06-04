@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PoolManager : MonoBehaviour
 {
-    public static PoolManager Instance {  get; private set; }
+    public static PoolManager Inst {  get; private set; }
 
     [Header("Pool Setting")]
     // 몬스터 프리팹을 넣을곳
@@ -17,7 +17,7 @@ public class PoolManager : MonoBehaviour
     private void Awake()
     {
         // 싱글턴 초기화
-        Instance = this;
+        Inst = this;
 
         InitPool();
     }

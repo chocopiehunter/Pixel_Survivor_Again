@@ -49,16 +49,10 @@ public class DungeonEntrance : MonoBehaviour
     {
         if (mainCameraTransform != null)
         {
-            // 카메라는 2D 게임에서 보통 Z값이 -10 정도로 유지되어야 화면이 보입니다.
-            // 따라서 X, Y는 던전 좌표로 바꾸되, 원래 카메라가 가 지고 있던 Z값은 그대로 유지해 줍니다.
+            // 던전 좌표로 바꾸고, 원래 카메라가 가 지고 있던 Z값은 그대로 유지
             float originalCameraZ = mainCameraTransform.position.z;
 
             mainCameraTransform.position = new Vector3(dungeonTargetPosition.x, dungeonTargetPosition.y, originalCameraZ);
-
-            // 만약 Cinemachine(시네머신) 카메라 패키지를 사용 중이시라면, 
-            // 순간이동 직후 카메라가 부드럽게 쫓아오느라 딜레이가 생길 수 있습니다.
-            // 그럴 때는 시네머신 가상 카메라 컴포넌트를 가져와서 .OnTargetObjectWarped()를 호출해야 하지만,
-            // 직접 만든 카메라 추적 스크립트라면 위의 포지션 대입만으로도 깔끔하게 순간이동합니다.
         }
     }
 }

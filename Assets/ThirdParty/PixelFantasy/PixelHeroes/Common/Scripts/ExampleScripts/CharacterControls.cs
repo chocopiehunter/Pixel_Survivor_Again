@@ -23,51 +23,55 @@ namespace Assets.PixelFantasy.PixelHeroes.Common.Scripts.ExampleScripts
         public void Update()
         {
             Move();
-            Attack();
+            //Attack();
 
             // Play other animations, just for example.
-            if (Input.GetKeyDown(KeyCode.I)) _animation.Idle();
-            if (Input.GetKeyDown(KeyCode.R)) _animation.Ready();
-            if (Input.GetKeyDown(KeyCode.B)) _animation.Block();
-            if (Input.GetKeyDown(KeyCode.C)) _animation.Climb();
-            if (Input.GetKeyDown(KeyCode.D)) _animation.Die();
-            if (Input.GetKeyDown(KeyCode.N)) _animation.Roll();
-            if (Input.GetKeyDown(KeyCode.H)) _animation.Hit();
-            if (Input.GetKeyUp(KeyCode.L)) EffectManager.Instance.Blink(_character);
+            //if (Input.GetKeyDown(KeyCode.I)) _animation.Idle();
+            //if (Input.GetKeyDown(KeyCode.R)) _animation.Ready();
+            //if (Input.GetKeyDown(KeyCode.B)) _animation.Block();
+            //if (Input.GetKeyDown(KeyCode.C)) _animation.Climb();
+            //if (Input.GetKeyDown(KeyCode.D)) _animation.Die();
+            //if (Input.GetKeyDown(KeyCode.N)) _animation.Roll();
+            //if (Input.GetKeyDown(KeyCode.H)) _animation.Hit();
+            //if (Input.GetKeyUp(KeyCode.L)) EffectManager.Instance.Blink(_character);
         }
 
         private void Move()
         {
             _controller.Input = Vector2.zero;
 
-            if (Input.GetKey(KeyCode.LeftArrow))
+            // 왼쪽 화살표 키 또는 A 키를 눌렀을 때
+            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
             {
                 _controller.Input.x = -1;
             }
-            else if (Input.GetKey(KeyCode.RightArrow))
+            // 오른쪽 화살표 키 또는 D 키를 눌렀을 때
+            else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
             {
                 _controller.Input.x = 1;
             }
 
-            if (Input.GetKey(KeyCode.UpArrow))
+            // 위쪽 화살표 키 또는 W 키를 눌렀을 때
+            if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
             {
                 _controller.Input.y = 1;
             }
-            else if (Input.GetKey(KeyCode.DownArrow))
+            // 아래쪽 화살표 키 또는 S 키를 눌렀을 때
+            else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
             {
                 _controller.Input.y = -1;
             }
         }
 
-        private void Attack()
-        {
-            if (Input.GetKeyDown(KeyCode.J)) _animation.Jab();
-            if (Input.GetKeyDown(KeyCode.S)) _animation.Slash();
-            if (Input.GetKeyDown(KeyCode.P)) _animation.Push();
-            if (Input.GetKeyDown(KeyCode.O)) _animation.Shot();
-            if (Input.GetKey(KeyCode.F)) Fire();
-            if (Input.GetKey(KeyCode.Q)) Fire(power: true);
-        }
+        //private void Attack()
+        //{
+        //    if (Input.GetKeyDown(KeyCode.J)) _animation.Jab();
+        //    if (Input.GetKeyDown(KeyCode.S)) _animation.Slash();
+        //    if (Input.GetKeyDown(KeyCode.P)) _animation.Push();
+        //    if (Input.GetKeyDown(KeyCode.O)) _animation.Shot();
+        //    if (Input.GetKey(KeyCode.F)) Fire();
+        //    if (Input.GetKey(KeyCode.Q)) Fire(power: true);
+        //}
 
         private float _fireTime;
 
