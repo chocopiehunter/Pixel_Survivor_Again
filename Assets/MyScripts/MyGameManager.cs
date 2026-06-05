@@ -21,17 +21,10 @@ public class MyGameManager : MonoBehaviour
             GameObject playerObj = Instantiate(playerPrefab, playerSpawnPoint.position, Quaternion.identity);
             Debug.Log("플레이어 생성완료");
 
-            // 시네머신 타겟 연결
-            CinemachineVirtualCamera vcam = FindObjectOfType<CinemachineVirtualCamera>();
-
-            if (vcam != null)
+            // 시네머신 카메라에게 동적생성된 플레이어를 보게함
+            if(CameraManager.Inst != null)
             {
-                vcam.Follow = playerObj.transform;
-                Debug.Log("카메라가 플레이어 추적 시작");
-            }
-            else
-            {
-                Debug.LogError("카메라 오류발생");
+                CameraManager.Inst.TargetFollow(playerObj.transform);
             }
 
             // 자식 찾기
