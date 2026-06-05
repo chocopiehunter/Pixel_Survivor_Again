@@ -15,6 +15,12 @@ public class RobbyUI : DaniTechUIBase
     public void OnClick_NewGameStart()
     {
         DaniTechUIManager.Instance.CloseContentUI(DaniTechUIType.RobbyUI);
+
+        // 내 게임매니저에서 StartGame 호출
+        if(MyGameManager.Instance != null)
+        {
+            MyGameManager.Instance.StartGame();
+        }
     }
 
     public void OnClick_GameQuit()

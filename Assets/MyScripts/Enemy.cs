@@ -8,13 +8,14 @@ public class Enemy : MonoBehaviour
     private Transform playerTransform;
     private Rigidbody2D rb;
 
-    private void Start()
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+    }
 
-        // 태그로 씬에 있는 Player 찾기
+    private void OnEnable()
+    {
         GameObject player = GameObject.FindWithTag("Player");
-
         if (player != null)
         {
             playerTransform = player.transform;
