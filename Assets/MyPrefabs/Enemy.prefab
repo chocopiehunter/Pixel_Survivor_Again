@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2403942270617782260}
   - component: {fileID: 4952894805357528458}
   - component: {fileID: 4506243653578150712}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,3 +171,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   moveSpeed: 3
+  enemyName: "\uBAAC\uC2A4\uD130"
+  maxHP: 20

@@ -1,9 +1,13 @@
+using MoreMountains.Feedbacks;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IDamageable
 {
-    [Header("Movement Setting")]
+    [Header("Enemy Stats")]
     [SerializeField] private float moveSpeed = 3.0f;
+    [SerializeField] private string enemyName = "몬스터";
+    [SerializeField] private float maxHP = 20;
+    private float currentHP;
 
     private Transform playerTransform;
     private Rigidbody2D rb;
@@ -11,6 +15,9 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        // 태어날때 최대체력
+        currentHP = maxHP;
     }
 
     private void OnEnable()
@@ -34,12 +41,38 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    // 플레이어에게 닿았는지 체크해보는 테스트 코드
+    // PlayerAttack.cs가 호출할 실제 피격함수
+    public void TakeDamage(float damage)
+    {
+        currentHP -= damage;
+        Debug.Log($"{enemyName}이 {damage}의 데미지 입음 (남은 체력: {currentHP}/{maxHP}");
+
+        // 현재 체력이 0이하면 사망
+        if (currentHP <= 0)
+        {
+            Die();
+        }
+    }
+
+    // 사망 처리
+    private void Die()
+    {
+        Debug.Log($"{enemyName} 사망");
+
+        gameObject.SetActive(false);
+    }
+
+    // 플레이어에게 닿으면 데미지 주는 로직
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("몬스터가 캐릭터를 공격했음");
+            IDamageable playerDamageable = collision.gameObject.GetComponent<IDamageable>();
+
+            if (playerDamageable != null)
+            {
+                playerDamageable.TakeDamage(5f);
+            }
         }
     }
 }

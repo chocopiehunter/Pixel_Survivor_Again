@@ -609,6 +609,8 @@ GameObject:
   - component: {fileID: 180129719022098703}
   - component: {fileID: 4691015950830840943}
   - component: {fileID: 5038560089648034791}
+  - component: {fileID: 4861748080188613566}
+  - component: {fileID: 1944243221710138021}
   m_Layer: 0
   m_Name: Character
   m_TagString: Player
@@ -701,7 +703,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Input: {x: 0, y: 0}
   Acceleration: 40
-  MaxSpeed: 8
+  MaxSpeed: 6
 --- !u!114 &495928314735005215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -782,7 +784,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.5625}
+  m_Offset: {x: 0, y: 0.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -918,6 +920,36 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4861748080188613566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5822108014829329026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: becc37011c0acb14f87d05c5a9a03900, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAttack
+  attackRadius: 2.5
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  attackCooldown: 2.5
+--- !u!114 &1944243221710138021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5822108014829329026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 123711ea4892af2478219c6d99210b15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  maxHP: 100
 --- !u!1 &9074968494874222871
 GameObject:
   m_ObjectHideFlags: 0
