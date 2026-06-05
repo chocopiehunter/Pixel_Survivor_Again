@@ -173,3 +173,5 @@ MonoBehaviour:
   moveSpeed: 3
   enemyName: "\uBAAC\uC2A4\uD130"
   maxHP: 20
+  attackDamage: 5
+  attackDelay: 0.1

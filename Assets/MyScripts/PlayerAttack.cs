@@ -1,4 +1,5 @@
 using UnityEngine;
+using Assets.PixelFantasy.PixelHeroes.Common.Scripts.ExampleScripts;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -9,6 +10,13 @@ public class PlayerAttack : MonoBehaviour
     [Header("Attack Cooldown")]
     [SerializeField] private float attackCooldown = 2.5f; // 공격 쿨타임
     private float lastAttackTime = 0f;
+
+    private CharacterAnimation _characterAnim;
+
+    private void Awake()
+    {
+        _characterAnim = GetComponent<CharacterAnimation>();
+    }
 
     private void Update()
     {
@@ -22,7 +30,13 @@ public class PlayerAttack : MonoBehaviour
 
     private void BasicAttack()
     {
-        // 쿨타임이 돌때마다 원을 그려 범위 내에 Enemy들을 모음
+        // 기본공격 쿨타임마다 Slash 애니메이션 작동
+        if (_characterAnim != null)
+        {
+            _characterAnim.Slash();
+        }
+
+        // 쿨타임이 돌때마다 범위내의 적들을 감지하고 데미지 주는 로직
         Collider2D[] hitEnemy = Physics2D.OverlapCircleAll(transform.position, attackRadius, enemyLayer);
 
         foreach(Collider2D enemyCollider in hitEnemy)

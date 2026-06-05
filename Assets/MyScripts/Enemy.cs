@@ -9,6 +9,11 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] private float maxHP = 20;
     private float currentHP;
 
+    [Header("Attack Setting")]
+    [SerializeField] private float attackDamage = 5f;
+    [SerializeField] private float attackDelay = 1f; // Æ½µ© ÁÖ±â (1ÃÊ¸¶´Ù)
+    private float lastAttackTime = 0f;
+
     private Transform playerTransform;
     private Rigidbody2D rb;
 
@@ -67,11 +72,16 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            IDamageable playerDamageable = collision.gameObject.GetComponent<IDamageable>();
-
-            if (playerDamageable != null)
+            // Æ½µ© µô·¹ÀÌ Ã¼Å©
+            if (Time.time >= lastAttackTime + attackDelay)
             {
-                playerDamageable.TakeDamage(5f);
+                IDamageable playerDamageable = collision.gameObject.GetComponent<IDamageable>();
+
+                if (playerDamageable != null)
+                {
+                    playerDamageable.TakeDamage(attackDamage);
+                    lastAttackTime = Time.time; // Æ½µ© ÁÖ±â °»½Å
+                }
             }
         }
     }
