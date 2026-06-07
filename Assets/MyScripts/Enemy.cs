@@ -1,5 +1,5 @@
 using System.Collections;
-using MoreMountains.Feedbacks; // FEEL ¿¡¼Â
+using MoreMountains.Feedbacks; // FEEL ì—ì…‹
 using UnityEngine;
 
 public class Enemy : MonoBehaviour, IDamageable
@@ -12,8 +12,11 @@ public class Enemy : MonoBehaviour, IDamageable
 
     [Header("Attack Setting")]
     [SerializeField] private float attackDamage = 5f;
-    [SerializeField] private float attackDelay = 1f; // Æ½µ© ÁÖ±â (1ÃÊ¸¶´Ù)
+    [SerializeField] private float attackDelay = 1f; // í‹±ë€ ì£¼ê¸° (1ì´ˆë§ˆë‹¤)
     private float lastAttackTime = 0f;
+
+    [Header("FEEL")]
+    [SerializeField] private MMF_Player hitFeedback;
 
     private Transform playerTransform;
     private Rigidbody2D rb;
@@ -21,18 +24,20 @@ public class Enemy : MonoBehaviour, IDamageable
     private SpriteRenderer spriteRenderer;
     private Animator animator;
 
-    // ÇÃ·¹ÀÌ¾î°¡ ½ÃÃ¼¸¦ Åë°úÇÒ¼ö ÀÖ°ÔÇÔ
+    // í”Œë ˆì´ì–´ê°€ ì‹œì²´ë¥¼ í†µê³¼í• ìˆ˜ ìˆê²Œí•¨
     private Collider2D enemyCollider;
-    // Á×À½ »óÅÂ ¼³Á¤À¸·Î ´Ù½Ã Á×´Â°Í ¹æÁö
+    // ì£½ìŒ ìƒíƒœ ì„¤ì •ìœ¼ë¡œ ë‹¤ì‹œ ì£½ëŠ”ê²ƒ ë°©ì§€
     private bool isDead = false;
+
+    // ë„‰ë°± ìƒíƒœ ì²´í¬ ë° ì¤‘ë³µ ë°©ì§€ìš© ë³€ìˆ˜
+    private bool isKnockback = false;
+    private Coroutine knockbackRoutine;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
-
         enemyCollider = GetComponent<Collider2D>();
     }
 
@@ -49,15 +54,16 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         if (data == null) return;
 
-        // ´Ù½Ã ÅÂ¾î³¯¶§ Á×À½ »óÅÂ Ç®°í ¹°¸®/Ãæµ¹Ã¼ ºÎÈ°
+        // ë‹¤ì‹œ íƒœì–´ë‚ ë•Œ ì£½ìŒ ìƒíƒœ í’€ê³  ë¬¼ë¦¬/ì¶©ëŒì²´ ë¶€í™œ
         isDead = false;
+        isKnockback = false; // ë„‰ë°± ìƒíƒœë„ ì´ˆê¸°í™”
         if (enemyCollider != null) enemyCollider.enabled = true;
         if (rb != null) rb.simulated = true;
 
-        // µ¥ÀÌÅÍ ÁÖÀÔ
+        // ë°ì´í„° ì£¼ì…
         enemyName = data.enemyName;
         maxHP = data.maxHP;
-        currentHP = maxHP; // Ã¼·Â ¸®¼Â
+        currentHP = maxHP; // ì²´ë ¥ ë¦¬ì…‹
         moveSpeed = data.moveSpeed;
         knockbackPower = data.knockbackPower;
 
@@ -67,76 +73,103 @@ public class Enemy : MonoBehaviour, IDamageable
 
     private void FixedUpdate()
     {
-        if (isDead) return; // Á×Àº »óÅÂ·Î ÇÃ·¹ÀÌ¾î ÂÑ±â ¹æÁö
+        // ì£½ì—ˆê±°ë‚˜ ë„‰ë°± ì¤‘ì¼ ë•ŒëŠ” í”Œë ˆì´ì–´ ì¶”ì  ì¤‘ì§€
+        if (isDead || isKnockback) return;
 
         if (playerTransform != null)
         {
-            // ÇÃ·¹ÀÌ¾îÀÇ ¹æÇâ °è»ê
+            // í”Œë ˆì´ì–´ì˜ ë°©í–¥ ê³„ì‚°
             Vector2 direction = ((Vector2)playerTransform.position - (Vector2)transform.position).normalized;
 
-            // rigidbody2d ¸¦ »ç¿ëÇØ ÇÃ·¹ÀÌ¾î ¹æÇâÀ¸·Î ÀÌµ¿
+            // rigidbody2d ë¥¼ ì‚¬ìš©í•´ í”Œë ˆì´ì–´ ë°©í–¥ìœ¼ë¡œ ì´ë™
             rb.MovePosition(rb.position + direction * moveSpeed * Time.fixedDeltaTime);
 
-            // ÁÂ¿ì ¹İÀü Ã³¸®
-            if (direction.x != null)
+            if (direction.x != 0)
             {
                 spriteRenderer.flipX = (direction.x < 0);
             }
         }
     }
 
-    // PlayerAttack.cs°¡ È£ÃâÇÒ ½ÇÁ¦ ÇÇ°İÇÔ¼ö
+    // PlayerAttack.csê°€ í˜¸ì¶œí•  ì‹¤ì œ í”¼ê²©í•¨ìˆ˜
     public void TakeDamage(float damage)
     {
-        if (isDead) return; // Á×Àº »óÅÂÀÏ¶§ °ø°İ¹Ş±â ¹æÁö
+        if (isDead) return; // ì´ë¯¸ ì£½ì€ ìƒíƒœì¼ ë•Œ ê³µê²©ë°›ê¸° ë°©ì§€
 
         currentHP -= damage;
-        Debug.Log($"{enemyName}ÀÌ {damage}ÀÇ µ¥¹ÌÁö ÀÔÀ½ (³²Àº Ã¼·Â: {currentHP}/{maxHP}");
+        Debug.Log($"{enemyName}ì´ {damage}ì˜ ë°ë¯¸ì§€ ì…ìŒ (ë‚¨ì€ ì²´ë ¥: {currentHP}/{maxHP})");
 
-        // ÇöÀç Ã¼·ÂÀÌ 0ÀÌÇÏ¸é »ç¸Á
+        // ì‚´ì•„ìˆì„ ë•Œ FEEL íš¨ê³¼ ì ìš©
+        if (hitFeedback != null) hitFeedback.PlayFeedbacks();
+
+        // í˜„ì¬ ì²´ë ¥ì´ 0ì´í•˜ë©´ ì‚¬ë§
         if (currentHP <= 0)
         {
+            if (knockbackRoutine != null) StopCoroutine(knockbackRoutine);
             Die();
+        }
+        else
+        {
+            // ì‚´ì•„ìˆë‹¤ë©´ ë„‰ë°± ì‹¤í–‰
+            if (knockbackRoutine != null) StopCoroutine(knockbackRoutine);
+            knockbackRoutine = StartCoroutine(KnockbackRoutine());
         }
     }
 
-    // »ç¸Á Ã³¸®
+    // ë„‰ë°± ë¬¼ë¦¬ ì œì–´ ì½”ë£¨í‹´
+    private IEnumerator KnockbackRoutine()
+    {
+        if (playerTransform == null) yield break;
+
+        isKnockback = true;
+
+        // í”Œë ˆì´ì–´ ë°˜ëŒ€ ë°©í–¥ ê³„ì‚°
+        Vector2 knockbackDirection = ((Vector2)transform.position - (Vector2)playerTransform.position).normalized;
+
+        // í”Œë ˆì´ì–´ ë°˜ëŒ€ ë°©í–¥ìœ¼ë¡œ ìˆœê°„ ì¶©ê²© ê°€í•¨
+        rb.linearVelocity = Vector2.zero;
+        rb.AddForce(knockbackDirection * knockbackPower, ForceMode2D.Impulse);
+
+        // 0.12ì´ˆ ë™ì•ˆ ë°€ë ¤ë‚¨ ì§€ì—°
+        yield return new WaitForSeconds(0.12f);
+
+        rb.linearVelocity = Vector2.zero;
+        isKnockback = false;
+    }
+
+    // ì‚¬ë§ ì²˜ë¦¬
     private void Die()
     {
         isDead = true;
-        Debug.Log($"{enemyName} »ç¸Á");
-        // Á×Àº »óÅÂ¿¡¼­ ÇÃ·¹ÀÌ¾î¿Í Ãæµ¹ ¹æÁö
-        if(enemyCollider != null) enemyCollider.enabled = false;
-        if(rb != null) rb.simulated = false;
+        Debug.Log($"{enemyName} ì‚¬ë§");
 
-        //Die ¾Ö´Ï¸ŞÀÌ¼Ç Àç»ı
-        if(animator != null)
+        if (enemyCollider != null) enemyCollider.enabled = false;
+        if (rb != null) rb.simulated = false;
+
+        // Die ì• ë‹ˆë©”ì´ì…˜ ì¬ìƒ
+        if (animator != null)
         {
             animator.Play("Die");
         }
 
-        // ÄÚ·çÆ¾À¸·Î Die¾Ö´Ï¸ŞÀÌ¼ÇÀÌ Àç»ıµÉ ½Ã°£µ¿¾È Àá½Ã ±â´Ù·È´Ù°¡ »ç¶óÁö°Ô ÇÔ
+        // ì½”ë£¨í‹´ìœ¼ë¡œ Dieì• ë‹ˆë©”ì´ì…˜ì´ ì¬ìƒë  ì‹œê°„ë™ì•ˆ ì ì‹œ ê¸°ë‹¤ë ¸ë‹¤ê°€ ì‚¬ë¼ì§€ê²Œ í•¨
         StartCoroutine(DieRoutine(0.5f));
     }
 
-    // Die ¾Ö´Ï¸ŞÀÌ¼Ç Àç»ıÀ» À§ÇÑ ÄÚ·çÆ¾ÇÔ¼ö
     private IEnumerator DieRoutine(float delay)
     {
         yield return new WaitForSeconds(delay);
-
-        // ¾Ö´Ï¸ŞÀÌ¼ÇÀÌ ³¡³ª¸é ºñÈ°¼ºÈ­
         gameObject.SetActive(false);
     }
 
-    // ÇÃ·¹ÀÌ¾î¿¡°Ô ´êÀ¸¸é µ¥¹ÌÁö ÁÖ´Â ·ÎÁ÷
+    // í”Œë ˆì´ì–´ì—ê²Œ ë‹¿ìœ¼ë©´ ë°ë¯¸ì§€ ì£¼ëŠ” ë¡œì§
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Á×Àº »óÅÂ·Î ÇÃ·¹ÀÌ¾î¿¡°Ô µ¥¹ÌÁö ÁÖ´Â°Í ¹æÁö
         if (isDead) return;
 
         if (collision.gameObject.CompareTag("Player"))
         {
-            // Æ½µ© µô·¹ÀÌ Ã¼Å©
+            // í‹±ë€ ë”œë ˆì´ ì²´í¬
             if (Time.time >= lastAttackTime + attackDelay)
             {
                 IDamageable playerDamageable = collision.gameObject.GetComponent<IDamageable>();
@@ -144,7 +177,7 @@ public class Enemy : MonoBehaviour, IDamageable
                 if (playerDamageable != null)
                 {
                     playerDamageable.TakeDamage(attackDamage);
-                    lastAttackTime = Time.time; // Æ½µ© ÁÖ±â °»½Å
+                    lastAttackTime = Time.time; // í‹±ë€ ì£¼ê¸° ê°±ì‹ 
                 }
             }
         }

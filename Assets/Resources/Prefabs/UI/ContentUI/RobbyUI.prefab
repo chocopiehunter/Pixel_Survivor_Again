@@ -1096,7 +1096,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Continue(\uBBF8\uAD6C\uD604)"
+  m_Text: "Continue\n(\uBBF8\uAD6C\uD604)"
 --- !u!1 &8030693319140567345
 GameObject:
   m_ObjectHideFlags: 0

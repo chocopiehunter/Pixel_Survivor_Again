@@ -2008,7 +2008,7 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 8
-  attackCooldown: 2.5
+  attackCooldown: 1.5
 --- !u!114 &1944243221710138021
 MonoBehaviour:
   m_ObjectHideFlags: 0

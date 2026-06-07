@@ -15,6 +15,6 @@ MonoBehaviour:
   enemyName: DarkElf
   maxHP: 25
   moveSpeed: 2
-  knockbackPower: 1
+  knockbackPower: 3
   enemySprite: {fileID: -832642620, guid: 33ee1086c189a944786bbb865fc6e6e3, type: 3}
   animatorController: {fileID: 22100000, guid: fe83ec4d00b36f540a5009323dcd52b0, type: 2}

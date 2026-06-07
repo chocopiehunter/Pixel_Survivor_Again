@@ -15,6 +15,6 @@ MonoBehaviour:
   enemyName: Goblin
   maxHP: 15
   moveSpeed: 3
-  knockbackPower: 1
+  knockbackPower: 5
   enemySprite: {fileID: -1830899774, guid: 027a8bcd6d5b6f74e8f6020c2aa4c0d0, type: 3}
   animatorController: {fileID: 22100000, guid: 372fa2c7c32abe84db3f8356fde31c9d, type: 2}
