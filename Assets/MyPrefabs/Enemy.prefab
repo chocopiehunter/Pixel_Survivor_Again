@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2403942270617782260}
   - component: {fileID: 4952894805357528458}
   - component: {fileID: 4506243653578150712}
+  - component: {fileID: 3781143650134255466}
   m_Layer: 3
   m_Name: Enemy
   m_TagString: Untagged
@@ -170,8 +171,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e41cabeb41567f458fa4e6f54531195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  moveSpeed: 3
-  enemyName: "\uBAAC\uC2A4\uD130"
-  maxHP: 20
   attackDamage: 5
   attackDelay: 0.1
+--- !u!95 &3781143650134255466
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2740217153882189281}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

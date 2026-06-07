@@ -8,6 +8,9 @@ public class SpawnManager : MonoBehaviour
     // 스폰 주기
     [SerializeField] private float spawnDelay = 1.0f;
 
+    [Header("Enemy Data Sheet(에셋 파일들을 넣을 곳)")]
+    [SerializeField] private EnemyData[] enemyDataGroup;
+
     private Transform spawnContainer;
     private float timer;
 
@@ -54,6 +57,19 @@ public class SpawnManager : MonoBehaviour
             spawnPosition.z = 0;
 
             enemy.transform.position = spawnPosition;
+
+            // Pool에서 나온 Enemy에 스크립터블 오브젝트 적용
+            Enemy enemyScript = enemy.GetComponent<Enemy>();
+            if (enemyScript != null && enemyDataGroup.Length > 0)
+            {
+                // 데이터 목록중 랜덤으로 하나 선택
+                int randomDataIndex = Random.Range(0, enemyDataGroup.Length);
+                EnemyData selectedData = enemyDataGroup[randomDataIndex];
+
+                // Enemy가 가진 InitEnemy함수를 호출해서 선택된 데이터를 전달
+                enemyScript.InitEnemy(selectedData);
+            }
+            // 스크립터블 오브젝트로 데이터를 다 적용한 뒤에 활성화
             enemy.SetActive(true);
         }
     }

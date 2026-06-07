@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -108,12 +108,1046 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_0
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 840
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ebed01e597b831468112445119a709e
+      internalID: 468464385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_1
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 840
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2555f8e95a767b4fb537878d0a34c41
+      internalID: 1442917645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_2
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 776
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ada07e59d5dd9944920f48921868b78
+      internalID: 1788292719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_3
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 775
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a33a61661641b04d8411d8d3d7ff47d
+      internalID: 1690634670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_4
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 712
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03ddcf0aec755b644abbae5a95b4bad7
+      internalID: -1279759549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_5
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 712
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00c8f0a76378d4b4686c297956ca0b20
+      internalID: 511153853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_6
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 712
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2666ba14511a214591fbe86e50ed619
+      internalID: -834409320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_7
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 712
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53bc995ccdd48114e856abc2b929718e
+      internalID: 16372288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_8
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 647
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11081f0d094d7ae4e9b3472ad17015bf
+      internalID: 1219372950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_9
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 647
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13324e4050482ca419d188f801a86279
+      internalID: -2108375323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_10
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 648
+        width: 22
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ab6ec3598a9eb147b8a7720e07fa827
+      internalID: 503751549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_11
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 647
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 019da66652f1d3d4e8a18dbcee4ce6ee
+      internalID: -2045197539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_12
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 579
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c83cba5584510b499016de76267ec60
+      internalID: 398661685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_13
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 579
+        width: 13
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9357a09c2692a8040bf38d86bdf8803e
+      internalID: -1387726540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_14
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 519
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 768eaa5f99f401a4c9d67231bfabca22
+      internalID: 165965077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_15
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 520
+        width: 16
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21cdf74095e138d44a0879700934018e
+      internalID: 600334983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_16
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 520
+        width: 17
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b887b6e7834dc04b9943f37b25b5523
+      internalID: -730337149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_17
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 456
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66575e8b2348dca4382d51d40ddd6fbd
+      internalID: 1465411443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_18
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 455
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46274eebb4a81ae439095928e73ed95a
+      internalID: -1611565890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_19
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 455
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24a7a660c9300ce429c838476bf2d616
+      internalID: 673667162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_20
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 392
+        width: 20
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7a80f8302e6a77468fab53e22e79133
+      internalID: 279932645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_21
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 392
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7576edc6fa5cd7429c99edf115a1a6c
+      internalID: 1073879974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_22
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 392
+        width: 27
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12ca3f5465dad564b91f965a847d6668
+      internalID: 1952275356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_23
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 328
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 519411049a71cc64480b1a5797d8d9a5
+      internalID: -542112811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_24
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 328
+        width: 17
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3add668a133637e409a09b73eee3e7ee
+      internalID: 725037304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_25
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 328
+        width: 28
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3b8bb8aa6a84764b8344b420854f57c
+      internalID: 292616343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_26
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 328
+        width: 27
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de9b038e2ed02c44b848487ca450641a
+      internalID: 854717534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_27
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 264
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e014cf207841db4e9d705f340de6b9b
+      internalID: 2028589322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_28
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 264
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7bc37cc73d329a4fb2d0b74cce1f0fa
+      internalID: 1349733580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_29
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 264
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a029e2f716554434b85535f56cd4a526
+      internalID: -347552806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_30
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 264
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4bbf00941d9c954b8204491fa02366e
+      internalID: -238570965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_31
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 200
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b06cd9077486537419382940bc8f29a5
+      internalID: -2041838162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_32
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 200
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f6198651b7b3604284dbc8219b70a2c
+      internalID: 583451415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_33
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 136
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9bc5fed6c8ddb14292df3d5acef21a9
+      internalID: -579305625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_34
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 135
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c1591b62c15f0f4d89cc509c9834958
+      internalID: -626188873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_35
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 72
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bc2a9a892c52c142b452dcddb633114
+      internalID: -1751620669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_36
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 71
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4d977b5898781d48ada62486c3aab2c
+      internalID: 536015703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_37
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 71
+        width: 21
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f06e191d63bcede4eb128328d4a3830b
+      internalID: 778647886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_38
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 8
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 967c3b665d554f44fbc16dd01758c24a
+      internalID: 97184066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_39
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 8
+        width: 19
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e89c1a4db3b679c419ee487a3028dfa7
+      internalID: 738830171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_40
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 10
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0b0ce24ceb2ef242babc0f234baec05
+      internalID: 1705165554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_41
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 10
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5c07589a8af37c4185b944768f2e2fc
+      internalID: -674123611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_42
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 8
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43945c5795bd51249b031db0213181d7
+      internalID: 1691341426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_43
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 7
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3e42d00c4d4ccb4294db6f769392fe7
+      internalID: -360750377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_44
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 8
+        width: 25
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf61064945153514185b041e27194224
+      internalID: 2063838692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_45
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 6
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91bc9570c6123bd43a88cdc84e4fe2d1
+      internalID: -43876134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FireLizard_GuardianHalberd_46
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 8
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dccd83bdf6f40f24e954740d396f4ec4
+      internalID: -177479037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c20566e7c84f11440acfb0a3443be287
     internalID: 0
     vertices: []
     indices: 
@@ -121,8 +1155,57 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
-    nameFileIdTable: {}
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      FireLizard_GuardianHalberd_0: 468464385
+      FireLizard_GuardianHalberd_1: 1442917645
+      FireLizard_GuardianHalberd_10: 503751549
+      FireLizard_GuardianHalberd_11: -2045197539
+      FireLizard_GuardianHalberd_12: 398661685
+      FireLizard_GuardianHalberd_13: -1387726540
+      FireLizard_GuardianHalberd_14: 165965077
+      FireLizard_GuardianHalberd_15: 600334983
+      FireLizard_GuardianHalberd_16: -730337149
+      FireLizard_GuardianHalberd_17: 1465411443
+      FireLizard_GuardianHalberd_18: -1611565890
+      FireLizard_GuardianHalberd_19: 673667162
+      FireLizard_GuardianHalberd_2: 1788292719
+      FireLizard_GuardianHalberd_20: 279932645
+      FireLizard_GuardianHalberd_21: 1073879974
+      FireLizard_GuardianHalberd_22: 1952275356
+      FireLizard_GuardianHalberd_23: -542112811
+      FireLizard_GuardianHalberd_24: 725037304
+      FireLizard_GuardianHalberd_25: 292616343
+      FireLizard_GuardianHalberd_26: 854717534
+      FireLizard_GuardianHalberd_27: 2028589322
+      FireLizard_GuardianHalberd_28: 1349733580
+      FireLizard_GuardianHalberd_29: -347552806
+      FireLizard_GuardianHalberd_3: 1690634670
+      FireLizard_GuardianHalberd_30: -238570965
+      FireLizard_GuardianHalberd_31: -2041838162
+      FireLizard_GuardianHalberd_32: 583451415
+      FireLizard_GuardianHalberd_33: -579305625
+      FireLizard_GuardianHalberd_34: -626188873
+      FireLizard_GuardianHalberd_35: -1751620669
+      FireLizard_GuardianHalberd_36: 536015703
+      FireLizard_GuardianHalberd_37: 778647886
+      FireLizard_GuardianHalberd_38: 97184066
+      FireLizard_GuardianHalberd_39: 738830171
+      FireLizard_GuardianHalberd_4: -1279759549
+      FireLizard_GuardianHalberd_40: 1705165554
+      FireLizard_GuardianHalberd_41: -674123611
+      FireLizard_GuardianHalberd_42: 1691341426
+      FireLizard_GuardianHalberd_43: -360750377
+      FireLizard_GuardianHalberd_44: 2063838692
+      FireLizard_GuardianHalberd_45: -43876134
+      FireLizard_GuardianHalberd_46: -177479037
+      FireLizard_GuardianHalberd_5: 511153853
+      FireLizard_GuardianHalberd_6: -834409320
+      FireLizard_GuardianHalberd_7: 16372288
+      FireLizard_GuardianHalberd_8: 1219372950
+      FireLizard_GuardianHalberd_9: -2108375323
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
