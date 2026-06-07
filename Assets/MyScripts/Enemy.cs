@@ -143,6 +143,11 @@ public class Enemy : MonoBehaviour, IDamageable
         isDead = true;
         Debug.Log($"{enemyName} 사망");
 
+        if(MyUIManager.Inst != null && MyUIManager.Inst.GetMainUI() != null)
+        {
+            MyUIManager.Inst.GetMainUI().AddKillCount();
+        }
+
         if (enemyCollider != null) enemyCollider.enabled = false;
         if (rb != null) rb.simulated = false;
 
