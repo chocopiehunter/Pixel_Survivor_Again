@@ -11,6 +11,9 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float attackCooldown = 2.5f; // 공격 쿨타임
     private float lastAttackTime = 0f;
 
+    // 공격 주기 감소 횟수
+    private int attackUpgradeCount = 0;
+
     private CharacterAnimation _characterAnim;
 
     private void Awake()
@@ -28,18 +31,31 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
+    // PlayerStats에서 레벨업할 때 이 함수를 참고
+    public void DecreaseAttackCooldown()
+    {
+        if (attackUpgradeCount < 10)
+        {
+            attackCooldown = attackCooldown - 0.1f;
+            attackUpgradeCount = attackUpgradeCount + 1; // 명확한 대입문 사용
+            Debug.Log($"[공격 속도 상승] 현재 쿨타임: {attackCooldown}초 (강화: {attackUpgradeCount}/10)");
+        }
+        else
+        {
+            Debug.Log("[공격 속도 최대 달성] 이미 10번 강화되어 더 이상 빨라지지 않습니다.");
+        }
+    }
+
     private void BasicAttack()
     {
-        // 기본공격 쿨타임마다 Slash 애니메이션 작동
         if (_characterAnim != null)
         {
             _characterAnim.Slash();
         }
 
-        // 쿨타임이 돌때마다 범위내의 적들을 감지하고 데미지 주는 로직
         Collider2D[] hitEnemy = Physics2D.OverlapCircleAll(transform.position, attackRadius, enemyLayer);
 
-        foreach(Collider2D enemyCollider in hitEnemy)
+        foreach (Collider2D enemyCollider in hitEnemy)
         {
             IDamageable damageable = enemyCollider.GetComponent<IDamageable>();
 
@@ -47,12 +63,10 @@ public class PlayerAttack : MonoBehaviour
             {
                 damageable.TakeDamage(10f);
                 Debug.Log($"기본공격 {enemyCollider.name}에게 기본공격해서 데미지 [10] 입힘");
-
             }
         }
     }
 
-    // 에디터에서 공격범위를 보기위한 유니티 기능
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

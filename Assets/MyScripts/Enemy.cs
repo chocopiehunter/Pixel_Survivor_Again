@@ -143,6 +143,12 @@ public class Enemy : MonoBehaviour, IDamageable
         isDead = true;
         Debug.Log($"{enemyName} 사망");
 
+        // 몬스터가 죽으면 경험치 20 (추후에 몬스터마다 경험치량 변경할것d)
+        if(PlayerStats.Inst != null)
+        {
+            PlayerStats.Inst.AddExp(20f);
+        }
+
         if(MyUIManager.Inst != null && MyUIManager.Inst.GetMainUI() != null)
         {
             MyUIManager.Inst.GetMainUI().AddKillCount();

@@ -5,14 +5,29 @@ using TMPro;
 public class MainUI : MonoBehaviour
 {
     [Header("EXP UI")]
-    [SerializeField] private Image expBarFill;
+    [SerializeField] private Slider expSlider; // Image에서 Slider로 변경
+    [SerializeField] private TMP_Text levelText;
 
     [Header("Text UI")]
     [SerializeField] private TMP_Text timerText;
     [SerializeField] private TMP_Text killCountText;
 
-    // 현재 킬 수
     private int currentKillCount = 0;
+
+    // PlayerStats에서 이 함수를 호출해 경험치 데이터를 넘겨줍니다.
+    public void UpdateExpBar(float currentExp, float maxExp, int currentLevel)
+    {
+        if (expSlider != null)
+        {
+            // 슬라이더의 value(0 ~ 1)에 [현재 경험치 / 최대 경험치] 비율을 대입합니다.
+            expSlider.value = currentExp / maxExp;
+        }
+
+        if (levelText != null)
+        {
+            levelText.text = "LV. " + currentLevel;
+        }
+    }
 
     public void UpdateTimerText(float time)
     {
@@ -22,10 +37,8 @@ public class MainUI : MonoBehaviour
         }
     }
 
-    // 몬스터가 죽었을 때 외부에서 호출하여 킬 수를 올리고 텍스트를 바꿈
     public void AddKillCount()
     {
-        // 명확한 연산을 위해 연산자 대신 직관적인 대입문 사용
         currentKillCount = currentKillCount + 1;
 
         if (killCountText != null)
@@ -36,11 +49,11 @@ public class MainUI : MonoBehaviour
 
     public void ResetInGameUI()
     {
-        // 게임 재시작 시 킬 수 데이터 초기화
         currentKillCount = 0;
 
         if (timerText != null) timerText.text = "00:00";
         if (killCountText != null) killCountText.text = "0";
-        if (expBarFill != null) expBarFill.fillAmount = 0f;
+        if (expSlider != null) expSlider.value = 0f; // ★ 리셋 시 슬라이더 바닥으로 초기화
+        if (levelText != null) levelText.text = "LV. 1";
     }
 }

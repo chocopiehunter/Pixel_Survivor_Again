@@ -11,19 +11,20 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     [Header("Player HUD")]
     [SerializeField] private Image hpBarFill;
 
-    private Transform _canvasTransform;
-    private Vector3 _initCanvasScale;
+    [Header("UI Canvas")]
+    [SerializeField] private RectTransform hpCanvas;
+    [SerializeField] private RectTransform levelUpCanvas;
+
+    private Vector3 _initHpCanvasScale;
+    private Vector3 _initLevelUpCanvasScale;
 
     private void Awake()
     {
         currentHP = maxHP;
 
         // 최상위 캔버스를 찾아 기본 크기를 기억해둠
-        if(hpBarFill != null && hpBarFill.canvas != null)
-        {
-            _canvasTransform = hpBarFill.canvas.transform;
-            _initCanvasScale = _canvasTransform.localScale;
-        }
+        if (hpCanvas != null) _initHpCanvasScale = hpCanvas.localScale;
+        if (levelUpCanvas != null) _initLevelUpCanvasScale = levelUpCanvas.localScale;
 
         UpdateHP();
     }
@@ -31,15 +32,23 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     // 좌우 이동에 따른 HUD 뒤집힘 해결 로직
     private void LateUpdate()
     {
-        if(_canvasTransform != null)
+        // 플레이어의 현재 Flip 상태 1 또는 -1
+        float playerScaleX = Mathf.Sign(transform.localScale.x);
+
+        // 체력 HUD 뒤집힘 방지
+        if (hpCanvas != null)
         {
-            Vector3 currentScale = _canvasTransform.localScale;
+            Vector3 scale = hpCanvas.localScale;
+            scale.x = playerScaleX * Mathf.Abs(_initHpCanvasScale.x);
+            hpCanvas.localScale = scale;
+        }
 
-            // 플레이어의 방향 체크
-            // 플레이어가 왼쪽을 볼때 -1이 되면 UI도 원래 크기에 -1을 곱해서 방향전환되는걸 막음
-            currentScale.x = Mathf.Sign(transform.localScale.x) * Mathf.Abs(_initCanvasScale.x);
-
-            _canvasTransform.localScale = currentScale;
+        // 레벨업UI 뒤집힘 방지
+        if (levelUpCanvas != null)
+        {
+            Vector3 scale = levelUpCanvas.localScale;
+            scale.x = playerScaleX * Mathf.Abs(_initLevelUpCanvasScale.x);
+            levelUpCanvas.localScale = scale;
         }
     }
 
@@ -56,6 +65,13 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         {
             PlayerDie();
         }
+    }
+
+    // 체력 회복
+    public void RestoreFullHP()
+    {
+        currentHP = maxHP;
+        UpdateHP();
     }
 
     private void UpdateHP()

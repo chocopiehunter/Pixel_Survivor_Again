@@ -2675,17 +2675,6 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
---- !u!114 &315626420 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 588294311566492732, guid: 4d27053e05beace4483c7b2fe9268b3b, type: 3}
-  m_PrefabInstance: {fileID: 1453171636}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!1 &359055992
 GameObject:
   m_ObjectHideFlags: 0
@@ -23025,6 +23014,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DungeonEntrance
   dungeonTargetPosition: {x: 10000, y: 10000}
+--- !u!114 &512928831 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4392588330638642646, guid: 4d27053e05beace4483c7b2fe9268b3b, type: 3}
+  m_PrefabInstance: {fileID: 1453171636}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Slider
+--- !u!114 &528351376 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1281627976385734058, guid: 4d27053e05beace4483c7b2fe9268b3b, type: 3}
+  m_PrefabInstance: {fileID: 1453171636}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &560757139
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25108,6 +25119,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: MyMainUI
       objectReference: {fileID: 0}
+    - target: {fileID: 588294311566492732, guid: 4d27053e05beace4483c7b2fe9268b3b, type: 3}
+      propertyPath: m_FillAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6844109094943638537, guid: 4d27053e05beace4483c7b2fe9268b3b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7695432889685390500, guid: 4d27053e05beace4483c7b2fe9268b3b, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7695432889685390500, guid: 4d27053e05beace4483c7b2fe9268b3b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8234941651597207646, guid: 4d27053e05beace4483c7b2fe9268b3b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -40
@@ -26924,7 +26951,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d50fb21a07549349aca108e49bfad4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InGameUI
-  expBarFill: {fileID: 315626420}
+  expSlider: {fileID: 512928831}
+  levelText: {fileID: 528351376}
   timerText: {fileID: 1748804594}
   killCountText: {fileID: 1821054966}
 --- !u!1 &1765077939
