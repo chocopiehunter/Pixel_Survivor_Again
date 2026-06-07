@@ -11,44 +11,46 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     [Header("Player HUD")]
     [SerializeField] private Image hpBarFill;
 
-    [Header("UI Canvas")]
+    [Header("UI Canvas (World Space)")]
     [SerializeField] private RectTransform hpCanvas;
     [SerializeField] private RectTransform levelUpCanvas;
 
-    private Vector3 _initHpCanvasScale;
-    private Vector3 _initLevelUpCanvasScale;
+    // 플레이어와 UI 사이의 처음 거리(오프셋)를 기억할 변수
+    private Vector3 _hpCanvasOffset;
+    private Vector3 _levelUpCanvasOffset;
 
     private void Awake()
     {
         currentHP = maxHP;
 
-        // 최상위 캔버스를 찾아 기본 크기를 기억해둠
-        if (hpCanvas != null) _initHpCanvasScale = hpCanvas.localScale;
-        if (levelUpCanvas != null) _initLevelUpCanvasScale = levelUpCanvas.localScale;
+        // [핵심 해결책] FEEL 에셋과의 스케일 충돌을 방지하기 위해 부모 관계를 끊습니다.
+        // 시작할 때 플레이어와의 상대적 거리를 기억한 뒤, 독립된 월드 오브젝트로 만듭니다.
+        if (hpCanvas != null)
+        {
+            _hpCanvasOffset = hpCanvas.position - transform.position;
+            hpCanvas.SetParent(null);
+        }
+
+        if (levelUpCanvas != null)
+        {
+            _levelUpCanvasOffset = levelUpCanvas.position - transform.position;
+            levelUpCanvas.SetParent(null);
+        }
 
         UpdateHP();
     }
 
-    // 좌우 이동에 따른 HUD 뒤집힘 해결 로직
+    // 플레이어가 이동한 후, 독립시킨 UI들이 머리 위 위치를 정확히 쫓아가도록 합니다.
     private void LateUpdate()
     {
-        // 플레이어의 현재 Flip 상태 1 또는 -1
-        float playerScaleX = Mathf.Sign(transform.localScale.x);
-
-        // 체력 HUD 뒤집힘 방지
         if (hpCanvas != null)
         {
-            Vector3 scale = hpCanvas.localScale;
-            scale.x = playerScaleX * Mathf.Abs(_initHpCanvasScale.x);
-            hpCanvas.localScale = scale;
+            hpCanvas.position = transform.position + _hpCanvasOffset;
         }
 
-        // 레벨업UI 뒤집힘 방지
         if (levelUpCanvas != null)
         {
-            Vector3 scale = levelUpCanvas.localScale;
-            scale.x = playerScaleX * Mathf.Abs(_initLevelUpCanvasScale.x);
-            levelUpCanvas.localScale = scale;
+            levelUpCanvas.position = transform.position + _levelUpCanvasOffset;
         }
     }
 
@@ -61,7 +63,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         UpdateHP();
 
         // 현재 체력 0이하 되면 사망
-        if ( currentHP <= 0)
+        if (currentHP <= 0)
         {
             PlayerDie();
         }
@@ -81,7 +83,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
             hpBarFill.fillAmount = currentHP / maxHP;
         }
     }
-    
+
     // 사망
     private void PlayerDie()
     {

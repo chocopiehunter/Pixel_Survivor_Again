@@ -2265,6 +2265,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   maxHP: 100
   hpBarFill: {fileID: 4968677397130605771}
+  hpCanvas: {fileID: 3802783995085147777}
+  levelUpCanvas: {fileID: 6825548515387240364}
 --- !u!114 &8651442694393209609
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 306421205}
   - component: {fileID: 306421204}
   - component: {fileID: 306421203}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Village_Objects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23481,7 +23481,7 @@ GameObject:
   - component: {fileID: 1086278662}
   - component: {fileID: 1086278661}
   - component: {fileID: 1086278660}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Dungeon_Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26378,6 +26378,9 @@ MonoBehaviour:
   enemyDataGroup:
   - {fileID: 11400000, guid: 07a860134b922894ca6f715b00f76d58, type: 2}
   - {fileID: 11400000, guid: b5e0c626c8c97a240aaebfe152070321, type: 2}
+  - {fileID: 11400000, guid: abaf5a92f29d60b4e8c3b37a61b87f07, type: 2}
+  - {fileID: 11400000, guid: 3fc49e6da303b174b9ddef7905559d11, type: 2}
+  - {fileID: 11400000, guid: 9340dc901475ce14c95a330aad9cadac, type: 2}
 --- !u!1 &1597555265
 GameObject:
   m_ObjectHideFlags: 0

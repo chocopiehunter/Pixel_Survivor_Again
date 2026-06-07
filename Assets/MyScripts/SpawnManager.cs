@@ -1,4 +1,7 @@
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -100,20 +103,36 @@ public class SpawnManager : MonoBehaviour
                 EnemyData selectedData = enemyDataGroup[randomDataIndex];
 
                 // 시간에 따른 등장 몬스터 로직
-                if (gameTimer < 30f)
+                if (gameTimer < 20f)
                 {
-                    // 30초 전에는 무조건 0번째 데이터(고블린)만 스폰
+                    // 20초 전에는 무조건 0번째 데이터(고블린)만 스폰
                     selectedData = enemyDataGroup[0];
                 }
-                else if (gameTimer >= 30f && gameTimer < 60f && enemyDataGroup.Length > 1)
+                else if (gameTimer >= 20f && gameTimer < 40f && enemyDataGroup.Length > 1)
                 {
-                    // 30초~60초 사이에는 0번과 1번(다크엘프) 중 랜덤 스폰
+                    // 20초~40초 사이에는 0번과 1번 중 랜덤 스폰
                     selectedData = enemyDataGroup[Random.Range(0, 2)];
                 }
-                else if (gameTimer >= 60f)
+                else if (gameTimer >= 40f && gameTimer < 60f && enemyDataGroup.Length > 1)
                 {
-                    // 60초 이후에는 배열의 가장 마지막 데이터만 확정 스폰
+                    // 40초~60초 사이에는 1번과 3번 중 랜덤 스폰
+                    selectedData = enemyDataGroup[Random.Range(1, 3)];
+                }
+                else if (gameTimer >= 60f && gameTimer < 80f && enemyDataGroup.Length > 1)
+                {
+                    // 60초~80초 사이에는 2번과 4번 중 랜덤 스폰
+                    selectedData = enemyDataGroup[Random.Range(2, 4)];
+                }
+                else if (gameTimer >= 80f && gameTimer < 100f && enemyDataGroup.Length > 1)
+                {
+                    // 80초~100초 사이에는 전체 데이터 중 랜덤 스폰
+                    selectedData = enemyDataGroup[Random.Range(0, enemyDataGroup.Length)];
+                }
+                else if (gameTimer >= 100f)
+                {
+                    // 100초 이후에는 배열의 가장 마지막 데이터만 확정 스폰
                     selectedData = enemyDataGroup[enemyDataGroup.Length - 1];
+                    spawnDelay = 0.3f;
                 }
 
                 // Enemy가 가진 InitEnemy함수를 호출해서 선택된 데이터를 전달
@@ -121,6 +140,28 @@ public class SpawnManager : MonoBehaviour
             }
             // 스크립터블 오브젝트로 데이터를 다 적용한 뒤에 활성화
             enemy.SetActive(true);
+
+            StartCoroutine(GhostModeRoutine(enemy, 5f)); // Enemy 활성화 직후 5초간 벽 통과 코루틴 실행
+        }
+    }
+
+    // 소환된 에너미가 5초 동안 특정 레이어만 통과하게 만드는 코루틴
+    private IEnumerator GhostModeRoutine(GameObject enemy, float duration)
+    {
+        Collider2D enemyCollider = enemy.GetComponent<Collider2D>();
+        if (enemyCollider == null) yield break;
+
+        // Village_Object와 Dungeon_Wall 레이어를 동시에 가져와서 에너미의 충돌 제외 레이어에 추가
+        int ignoreLayerMask = LayerMask.GetMask("Village_Object", "Dungeon_Wall");
+        enemyCollider.excludeLayers |= ignoreLayerMask;
+
+        // 5초 동안 대기
+        yield return new WaitForSeconds(duration);
+
+        // 5초 뒤 에너미가 살아있다면 해당 레이어들과의 충돌을 다시 복구
+        if (enemy != null && enemyCollider != null && enemy.activeSelf)
+        {
+            enemyCollider.excludeLayers &= ~ignoreLayerMask;
         }
     }
 }
