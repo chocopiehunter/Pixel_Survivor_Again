@@ -1,0 +1,36 @@
+{
+  "group_id": null,
+  "states": [
+    {
+      "character": {
+        "id": "735bafc1-5c6f-4816-bf08-365fbb2b23e1",
+        "name": "Crawling zombie, missing lower body, severed waist, upper torso dragging on ground, arms supporting weight, gruesome exposed spine, horror aesthetic, limited color palette, clean silhouette, character sprite, top-down view",
+        "prompt": "Crawling zombie, missing lower body, severed waist, upper torso dragging on ground, arms supporting weight, gruesome exposed spine, horror aesthetic, limited color palette, clean silhouette, character sprite, top-down view",
+        "size": {
+          "width": 68,
+          "height": 68
+        },
+        "template_id": "bear",
+        "directions": 8,
+        "view": "low top-down",
+        "created_at": "2026-06-02T00:21:51.109857+00:00"
+      },
+      "folder": "Crawling_zombie_missing_lower_body_severed_waist_u",
+      "frames": {
+        "rotations": {
+          "south": "Crawling_zombie_missing_lower_body_severed_waist_u/rotations/south.png",
+          "south-east": "Crawling_zombie_missing_lower_body_severed_waist_u/rotations/south-east.png",
+          "east": "Crawling_zombie_missing_lower_body_severed_waist_u/rotations/east.png",
+          "north-east": "Crawling_zombie_missing_lower_body_severed_waist_u/rotations/north-east.png",
+          "north": "Crawling_zombie_missing_lower_body_severed_waist_u/rotations/north.png",
+          "north-west": "Crawling_zombie_missing_lower_body_severed_waist_u/rotations/north-west.png",
+          "west": "Crawling_zombie_missing_lower_body_severed_waist_u/rotations/west.png",
+          "south-west": "Crawling_zombie_missing_lower_body_severed_waist_u/rotations/south-west.png"
+        },
+        "animations": {}
+      }
+    }
+  ],
+  "export_version": "3.0",
+  "export_date": "2026-06-08T04:08:21.120027"
+}

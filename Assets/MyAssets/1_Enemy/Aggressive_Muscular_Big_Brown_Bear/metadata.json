@@ -1,0 +1,36 @@
+{
+  "group_id": null,
+  "states": [
+    {
+      "character": {
+        "id": "ef753361-77aa-4ba6-a9e2-c5707cb47a02",
+        "name": "Aggressive, Muscular, Big, Brown Bear",
+        "prompt": "Aggressive, Muscular, Big, Brown Bear",
+        "size": {
+          "width": 124,
+          "height": 124
+        },
+        "template_id": "bear",
+        "directions": 8,
+        "view": "high top-down",
+        "created_at": "2026-05-20T02:12:17.66058+00:00"
+      },
+      "folder": "Aggressive_Muscular_Big_Brown_Bear",
+      "frames": {
+        "rotations": {
+          "south": "Aggressive_Muscular_Big_Brown_Bear/rotations/south.png",
+          "south-east": "Aggressive_Muscular_Big_Brown_Bear/rotations/south-east.png",
+          "east": "Aggressive_Muscular_Big_Brown_Bear/rotations/east.png",
+          "north-east": "Aggressive_Muscular_Big_Brown_Bear/rotations/north-east.png",
+          "north": "Aggressive_Muscular_Big_Brown_Bear/rotations/north.png",
+          "north-west": "Aggressive_Muscular_Big_Brown_Bear/rotations/north-west.png",
+          "west": "Aggressive_Muscular_Big_Brown_Bear/rotations/west.png",
+          "south-west": "Aggressive_Muscular_Big_Brown_Bear/rotations/south-west.png"
+        },
+        "animations": {}
+      }
+    }
+  ],
+  "export_version": "3.0",
+  "export_date": "2026-06-08T02:32:47.144478"
+}

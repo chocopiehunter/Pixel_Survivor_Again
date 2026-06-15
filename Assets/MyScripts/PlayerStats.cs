@@ -3,7 +3,7 @@ using MoreMountains.Feedbacks;
 
 public class PlayerStats : MonoBehaviour
 {
-    // 어디서나 플레이어 정보에 접근할 수 있도록 싱글톤 처리
+    // 어디서든 플레이어 정보에 접근할 수 있도록
     public static PlayerStats Inst { get; private set; }
 
     [Header("Player Level & EXP")]

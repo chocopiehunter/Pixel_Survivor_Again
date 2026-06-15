@@ -31,7 +31,7 @@ public class SpawnManager : MonoBehaviour
     public void StartGame()
     {
         Time.timeScale = 1f;
-        Debug.Log("[★ 성공] SpawnManager의 StartGame() 함수가 정상적으로 호출되었습니다!");
+        Debug.Log("SpawnManager의 StartGame() 함수가 정상적으로 호출되었습니다!");
 
         gameTimer = 0f;
         timer = 0f;
@@ -132,7 +132,7 @@ public class SpawnManager : MonoBehaviour
                 {
                     // 100초 이후에는 배열의 가장 마지막 데이터만 확정 스폰
                     selectedData = enemyDataGroup[enemyDataGroup.Length - 1];
-                    spawnDelay = 0.3f;
+                    spawnDelay = 0.1f;
                 }
 
                 // Enemy가 가진 InitEnemy함수를 호출해서 선택된 데이터를 전달

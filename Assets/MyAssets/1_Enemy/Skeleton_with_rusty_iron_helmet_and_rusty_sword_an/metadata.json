@@ -1,0 +1,36 @@
+{
+  "group_id": null,
+  "states": [
+    {
+      "character": {
+        "id": "0f22e4b7-96b0-4a51-aa4b-2f4f91e4a7ae",
+        "name": "Skeleton with rusty iron helmet and rusty sword and no cloths",
+        "prompt": "Skeleton with rusty iron helmet and rusty sword and no cloths",
+        "size": {
+          "width": 36,
+          "height": 36
+        },
+        "template_id": "mannequin",
+        "directions": 8,
+        "view": "low top-down",
+        "created_at": "2026-06-01T23:42:51.381607+00:00"
+      },
+      "folder": "Skeleton_with_rusty_iron_helmet_and_rusty_sword_an",
+      "frames": {
+        "rotations": {
+          "south": "Skeleton_with_rusty_iron_helmet_and_rusty_sword_an/rotations/south.png",
+          "south-east": "Skeleton_with_rusty_iron_helmet_and_rusty_sword_an/rotations/south-east.png",
+          "east": "Skeleton_with_rusty_iron_helmet_and_rusty_sword_an/rotations/east.png",
+          "north-east": "Skeleton_with_rusty_iron_helmet_and_rusty_sword_an/rotations/north-east.png",
+          "north": "Skeleton_with_rusty_iron_helmet_and_rusty_sword_an/rotations/north.png",
+          "north-west": "Skeleton_with_rusty_iron_helmet_and_rusty_sword_an/rotations/north-west.png",
+          "west": "Skeleton_with_rusty_iron_helmet_and_rusty_sword_an/rotations/west.png",
+          "south-west": "Skeleton_with_rusty_iron_helmet_and_rusty_sword_an/rotations/south-west.png"
+        },
+        "animations": {}
+      }
+    }
+  ],
+  "export_version": "3.0",
+  "export_date": "2026-06-08T04:08:07.908368"
+}

@@ -1,0 +1,36 @@
+{
+  "group_id": null,
+  "states": [
+    {
+      "character": {
+        "id": "18675bd7-7b66-4232-a7ed-ae944e6fbe67",
+        "name": "a creepy zombie crawling on the floor with no lower body, dragging its upper torso",
+        "prompt": "a creepy zombie crawling on the floor with no lower body, dragging its upper torso",
+        "size": {
+          "width": 48,
+          "height": 48
+        },
+        "template_id": "mannequin",
+        "directions": 8,
+        "view": "low top-down",
+        "created_at": "2026-06-02T00:03:02.841701+00:00"
+      },
+      "folder": "a_creepy_zombie_crawling_on_the_floor_with_no_lowe",
+      "frames": {
+        "rotations": {
+          "south": "a_creepy_zombie_crawling_on_the_floor_with_no_lowe/rotations/south.png",
+          "south-east": "a_creepy_zombie_crawling_on_the_floor_with_no_lowe/rotations/south-east.png",
+          "east": "a_creepy_zombie_crawling_on_the_floor_with_no_lowe/rotations/east.png",
+          "north-east": "a_creepy_zombie_crawling_on_the_floor_with_no_lowe/rotations/north-east.png",
+          "north": "a_creepy_zombie_crawling_on_the_floor_with_no_lowe/rotations/north.png",
+          "north-west": "a_creepy_zombie_crawling_on_the_floor_with_no_lowe/rotations/north-west.png",
+          "west": "a_creepy_zombie_crawling_on_the_floor_with_no_lowe/rotations/west.png",
+          "south-west": "a_creepy_zombie_crawling_on_the_floor_with_no_lowe/rotations/south-west.png"
+        },
+        "animations": {}
+      }
+    }
+  ],
+  "export_version": "3.0",
+  "export_date": "2026-06-08T04:08:15.246313"
+}
